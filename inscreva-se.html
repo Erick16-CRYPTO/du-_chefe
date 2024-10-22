@@ -1,0 +1,68 @@
+<html>
+ <head>
+  <title>
+   Comida Du Chefe - Sign Up
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <script>
+   function redirectToWelcome() {
+     window.location.href = "welcome.html";
+   }
+  </script>
+ </head>
+ <body class="bg-white flex items-center justify-center h-screen">
+  <div class="w-full max-w-xs">
+   <div class="flex justify-center mb-6">
+    <img alt="Logo of a chef holding a dish with the text 'Comida Du Chefe'" class="w-32 h-32" height="100" src="https://storage.googleapis.com/a1aa/image/cLfeep5m67CzLIZoJ4IMVT0Ddx0GtGUFJ3XCAbCigAfXxlbOB.jpg" width="100"/>
+   </div>
+   <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="mb-4">
+     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" placeholder="Username" type="text"/>
+    </div>
+    <div class="mb-4">
+     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" placeholder="Phone" type="text"/>
+    </div>
+    <div class="mb-4">
+     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" placeholder="Password" type="password"/>
+    </div>
+    <div class="mb-4">
+     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="confirm-password" placeholder="Confirm password" type="password"/>
+    </div>
+    <div class="mb-4 flex items-center">
+     <input class="mr-2 leading-tight" id="terms" type="checkbox"/>
+     <label class="text-sm text-gray-700" for="terms">
+      Eu concordo com o
+      <a class="text-yellow-500" href="#">
+       termos e Condições
+      </a>
+     </label>
+    </div>
+    <div class="mb-4">
+     <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" onclick="redirectToWelcome()" type="button">
+      Inscrever-se
+     </button>
+    </div>
+    <div class="text-center text-gray-500 text-sm">
+     Já tem uma conta?
+     <a class="text-gray-700 font-bold" href="#">
+      Faça login aqui
+     </a>
+    </div>
+   </form>
+   <div class="flex justify-center space-x-4">
+    <button class="bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center">
+     <i class="fab fa-facebook-f mr-2">
+     </i>
+     Facebook
+    </button>
+    <button class="bg-white border border-gray-300 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center">
+     <i class="fab fa-google mr-2">
+     </i>
+     Google
+    </button>
+   </div>
+  </div>
+ </body>
+</html>

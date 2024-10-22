@@ -1,0 +1,141 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        function updateQuantity(item, operation) {
+            const quantityElement = document.getElementById(`quantity-${item}`);
+            let quantity = parseInt(quantityElement.innerText);
+            if (operation === 'increment') {
+                quantity++;
+            } else if (operation === 'decrement' && quantity > 0) {
+                quantity--;
+            }
+            quantityElement.innerText = quantity;
+            updateTotal();
+        }
+
+        function removeItem(item) {
+            document.getElementById(`item-${item}`).remove();
+            updateTotal();
+        }
+
+        function updateTotal() {
+            const items = [
+                { id: 'frango', price: 1500 },
+                { id: 'especial', price: 4500 },
+                { id: 'sopa', price: 2500 }
+            ];
+            let subTotal = 0;
+            items.forEach(item => {
+                const quantity = parseInt(document.getElementById(`quantity-${item.id}`).innerText);
+                subTotal += item.price * quantity;
+            });
+            const deliveryFee = 150;
+            const discount = 2595;
+            const total = subTotal + deliveryFee - discount;
+
+            document.getElementById('sub-total').innerText = `N${subTotal}`;
+            document.getElementById('total').innerText = `N${total}`;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function placeOrder() {
+            document.getElementById('loading-screen').classList.remove('hidden');
+            setTimeout(() => {
+                window.location.href = "order_confirmation.html"; // Replace with the actual URL of the order confirmation page
+            }, 2000); // Simulate a 2-second loading time
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <div id="loading-screen" class="fixed inset-0 bg-white flex items-center justify-center hidden">
+        <div class="text-center">
+            <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32 mb-4"></div>
+            <h2 class="text-xl font-semibold">Carregando...</h2>
+            <p class="text-gray-500">Por favor, aguarde.</p>
+        </div>
+    </div>
+    <div class="max-w-md mx-auto p-4">
+        <div class="flex items-center mb-4">
+            <i class="fas fa-arrow-left text-xl cursor-pointer" onclick="goBack()"></i>
+            <h1 class="text-center flex-grow text-xl font-semibold text-purple-800">Carrinho</h1>
+        </div>
+        <div class="space-y-4">
+            <div id="item-frango" class="flex justify-between items-center border-b pb-2">
+                <div>
+                    <h2 class="font-semibold">Frango & Fritas</h2>
+                    <p>N1500</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button onclick="updateQuantity('frango', 'decrement')" class="bg-red-200 text-red-600 rounded-full w-6 h-6 flex items-center justify-center">-</button>
+                    <span id="quantity-frango">1</span>
+                    <button onclick="updateQuantity('frango', 'increment')" class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center">+</button>
+                    <button onclick="removeItem('frango')" class="text-black"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div id="item-especial" class="flex justify-between items-center border-b pb-2">
+                <div>
+                    <h2 class="font-semibold">Especial de Agosto</h2>
+                    <p>N4500</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button onclick="updateQuantity('especial', 'decrement')" class="bg-red-200 text-red-600 rounded-full w-6 h-6 flex items-center justify-center">-</button>
+                    <span id="quantity-especial">1</span>
+                    <button onclick="updateQuantity('especial', 'increment')" class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center">+</button>
+                    <button onclick="removeItem('especial')" class="text-black"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div id="item-sopa" class="flex justify-between items-center border-b pb-2">
+                <div>
+                    <h2 class="font-semibold">Sopa Egusi</h2>
+                    <p>N2500</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button onclick="updateQuantity('sopa', 'decrement')" class="bg-red-200 text-red-600 rounded-full w-6 h-6 flex items-center justify-center">-</button>
+                    <span id="quantity-sopa">1</span>
+                    <button onclick="updateQuantity('sopa', 'increment')" class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center">+</button>
+                    <button onclick="removeItem('sopa')" class="text-black"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+        <p class="text-center text-sm text-gray-500 mt-6">Tem 30% de Desconto em todas as refeições entre 1 a 30 de agosto de 2024.</p>
+        <div class="bg-red-600 text-white p-4 mt-6 rounded-lg">
+            <div class="flex justify-between">
+                <span>Sub-Total</span>
+                <span id="sub-total">N8500</span>
+            </div>
+            <div class="flex justify-between">
+                <span>Taxa de Entrega</span>
+                <span>N150</span>
+            </div>
+            <div class="flex justify-between">
+                <span>Desconto</span>
+                <span>N2595</span>
+            </div>
+            <div class="flex justify-between font-semibold mt-2">
+                <span>Total</span>
+                <span id="total">N6055</span>
+            </div>
+        </div>
+        <button onclick="placeOrder()" class="bg-red-600 text-white w-full py-2 mt-4 rounded-lg">Faça meu pedido</button>
+    </div>
+    <style>
+        .loader {
+            border-top-color: #3498db;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</body>
+</html>
