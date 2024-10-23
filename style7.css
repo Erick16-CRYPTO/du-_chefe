@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.logo img {
+    width: 100%;
+    max-width: 200px;
+}
+.input-group {
+    margin: 15px 0;
+}
+.input-group input {
+    width: 93%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.remember-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.remember-me input {
+    margin-right: 10px;
+}
+.remember-me a {
+    color: #ffd700;
+    text-decoration: none;
+}
+.login-btn {
+    background-color: #ffeb3b;
+    color: #000;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    margin: 20px 0;
+}
+.signup-link {
+    color: #888;
+    font-size: 14px;
+}
+.signup-link a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.social-login {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.social-login a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+.social-login a.facebook {
+    background-color: #3b5998;
+}
+.social-login a.google {
+    background-color: #db4437;
+}
+.social-login a i {
+    margin-right: 10px;
+}

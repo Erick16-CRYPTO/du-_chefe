@@ -1,0 +1,54 @@
+body {
+    background-color: #A63D3D;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    width: 300px;
+}
+.back-arrow {
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(224, 223, 223);
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.notification {
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notification i {
+    margin-right: 10px;
+}
+.notification .text {
+    flex-grow: 1;
+}
+.notification .text p {
+    margin: 0;
+}
+.notification .text .time {
+    font-size: 0.8em;
+    color: #555;
+}
+.close-button {
+    cursor: pointer;
+}
