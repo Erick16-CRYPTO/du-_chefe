@@ -1,0 +1,35 @@
+#ave{
+    width: 14%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.luscas{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: rgb(231, 46, 46)
+    
+}
+#red{
+    width: 14%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+ 
+  
+  
+}
+.milita{
+    padding: 15px;
+    border-radius: 20px;
+    background-color: rgb(231, 46, 46)
+    
+
+}

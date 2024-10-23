@@ -95,6 +95,8 @@
     </div>
    </div>
    <div class="fixed bottom-0 left-0 right-0 bg-red-600 p-4 flex justify-around text-white">
+
+
     <div class="flex flex-col items-center" onclick="handleFooterClick('Início')">
      <i class="fas fa-home text-xl">
      </i>
@@ -102,29 +104,51 @@
       Início
      </span>
     </div>
-    <div class="flex flex-col items-center" onclick="handleFooterClick('Carrinho')">
-     <i class="fas fa-shopping-cart text-xl">
-     </i>
-     <a href="/favoritos.html">
-     <span class="text-xs">
-      Carrinho
-      </a>
-     </span>
+
+    <a href="carrinho.html">
+      <div class="flex flex-col items-center" onclick="handleFooterClick('Carrinho')"> 
+        <i class="fas fa-shopping-cart text-xl">
+        </i>
+        <a href="carrinho.html">
+        <span class="text-xs">
+         Carrinho
+         </a>
+        </span>
+    </a>
     </div>
-    <div class="flex flex-col items-center" onclick="handleFooterClick('Favoritos')">
-     <i class="fas fa-heart text-xl">
-     </i>
-     <span class="text-xs">
-      Favoritos
-     </span>
-    </div>
-    <div class="flex flex-col items-center" onclick="handleFooterClick('Notificações')">
-     <i class="fas fa-bell text-xl">
-     </i>
-     <span class="text-xs">
-      Notificações
-     </span>
-    </div>
+
+
+    <a href="favoritos.html">
+      <div class="flex flex-col items-center" onclick="handleFooterClick('Favoritos')">
+        <i class="fas fa-heart text-xl">
+        </i>
+        <span class="text-xs">
+         Favoritos
+        </span>
+       </div>
+    </a>
+
+
+
+
+
+
+    <a href="">
+      <div class="flex flex-col items-center" onclick="handleFooterClick('Notificações')">
+        <i class="fas fa-bell text-xl">
+        </i>
+        <span class="text-xs">
+         Notificações
+        </span>
+       </div>
+    </a>
+
+
+
+
+
+
+
     <div class="flex flex-col items-center" onclick="handleFooterClick('Perfil')">
      <i class="fas fa-user text-xl">
      </i>

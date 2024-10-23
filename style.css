@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.image-container {
+    position: relative;
+}
+.image-container img {
+    width: 100%;
+    display: block;
+}
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.content {
+    padding: 20px;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a148c;
+    margin: 0;
+}
+.price {
+    font-size: 20px;
+    color: #000;
+    margin: 10px 0;
+}
+.description {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+.favorite-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.cart-button {
+    display: block;
+    width: 100%;
+    background-color: #b71c1c;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+#hero{
+    width: 8%;
+    
+}
