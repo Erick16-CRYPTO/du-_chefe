@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.modal {
+    background-color: #faebeb;
+    border-radius: 15px;
+    padding: 130px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+.modal .icon {
+    background-color: #8b4a4a;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 45px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.modal .icon i {
+    color: #d4ff00;
+    font-size: 50px;
+}
+.modal p {
+    font-size: 18px;
+    color: #000;
+    margin: 0 0 20px;
+}
+.modal .button {
+    background-color: #a33a3a;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 30px;
+    width: 80%;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+#AVE{
+    height: 100px;
+}
