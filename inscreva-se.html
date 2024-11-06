@@ -1,68 +1,139 @@
-<html>
- <head>
-  <title>
-   Comida Du Chefe - Sign Up
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <script>
-   function redirectToWelcome() {
-     window.location.href = "welcome.html";
-   }
-  </script>
- </head>
- <body class="bg-white flex items-center justify-center h-screen">
-  <div class="w-full max-w-xs">
-   <div class="flex justify-center mb-6">
-    <img alt="Logo of a chef holding a dish with the text 'Comida Du Chefe'" class="w-32 h-32" height="100" src="https://storage.googleapis.com/a1aa/image/cLfeep5m67CzLIZoJ4IMVT0Ddx0GtGUFJ3XCAbCigAfXxlbOB.jpg" width="100"/>
-   </div>
-   <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-    <div class="mb-4">
-     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" placeholder="Username" type="text"/>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comida Du Chefe - Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <script>
+        function validateForm(event) {
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const terms = document.getElementById('terms').checked;
+
+            // Validação dos campos
+            if (!username || !phone || !password || !confirmPassword) {
+                alert('Por favor, preencha todos os campos.');
+                event.preventDefault();
+                return false;
+            }
+
+            // Verificando se as senhas coincidem
+            if (password !== confirmPassword) {
+                alert('As senhas não coincidem.');
+                event.preventDefault();
+                return false;
+            }
+
+            // Verificando se os termos e condições foram aceitos
+            if (!terms) {
+                alert('Você deve concordar com os termos e condições.');
+                event.preventDefault();
+                return false;
+            }
+
+            // Se tudo estiver correto, direciona o usuário
+            window.location.href = "welcome.html";
+            return true;
+        }
+
+        // Função para permitir apenas números no campo de telefone
+        function onlyNumbers(event) {
+            const input = event.target;
+            input.value = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+        }
+
+        // Função para alternar a visibilidade da senha
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const confirmPasswordField = document.getElementById('confirm-password');
+            const passwordToggle = document.getElementById('password-toggle');
+
+            // Verifica se o checkbox foi marcado
+            if (passwordToggle.checked) {
+                // Torna a senha visível
+                passwordField.type = 'text';
+                confirmPasswordField.type = 'text';
+            } else {
+                // Torna a senha invisível
+                passwordField.type = 'password';
+                confirmPasswordField.type = 'password';
+            }
+        }
+    </script>
+</head>
+<body class="bg-white flex items-center justify-center h-screen">
+    <div class="w-full max-w-xs">
+        <div class="flex justify-center mb-6">
+            <img alt="Logo of a chef holding a dish with the text 'Comida Du Chefe'" class="w-32 h-32" height="100" src="https://storage.googleapis.com/a1aa/image/cLfeep5m67CzLIZoJ4IMVT0Ddx0GtGUFJ3XCAbCigAfXxlbOB.jpg" width="100"/>
+        </div>
+        
+        <!-- Formulário de inscrição -->
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onsubmit="return validateForm(event)">
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700">Nome de usuário</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="username" placeholder="Digite seu nome de usuário" type="text" required/>
+            </div>
+
+            <div class="mb-4">
+                <label for="phone" class="block text-sm font-medium text-gray-700">Telefone</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="phone" placeholder="Digite seu número de telefone" type="tel" maxlength="15" oninput="onlyNumbers(event)" required/>
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="password" placeholder="Crie uma senha segura" type="password" required/>
+            </div>
+
+            <div class="mb-4">
+                <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirmar senha</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="confirm-password" placeholder="Confirme sua senha" type="password" required/>
+            </div>
+
+            <!-- Checkbox para alternar visibilidade da senha -->
+            <div class="mb-4 flex items-center">
+                <input type="checkbox" id="password-toggle" class="mr-2" onchange="togglePasswordVisibility()"/>
+                <label for="password-toggle" class="text-sm text-gray-700">
+                    Mostrar senha
+                </label>
+            </div>
+
+            <div class="mb-4 flex items-center">
+                <input class="mr-2 leading-tight" id="terms" type="checkbox" required/>
+                <label class="text-sm text-gray-700" for="terms">
+                    Eu concordo com os <a class="text-yellow-500" href="#">termos e condições</a>
+                </label>
+            </div>
+
+            <div class="mb-4">
+                <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
+                    Inscrever-se
+                </button>
+            </div>
+        </form>
+
+        <!-- Link para login -->
+        <div class="text-center text-gray-500 text-sm">
+            Já tem uma conta? <a class="text-gray-700 font-bold" href="/façalogin.html">Faça login aqui</a>
+        </div>
+
+        <!-- Botões de login social -->
+        <div class="flex justify-center space-x-4 mt-6">
+            <button class="bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center">
+                <i class="fab fa-facebook-f mr-2"></i> Facebook
+            </button>
+            <button class="bg-white border border-gray-300 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center">
+                <i class="fab fa-google mr-2"></i> Google
+            </button>
+        </div>
     </div>
-    <div class="mb-4">
-     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" placeholder="Phone" type="text"/>
-    </div>
-    <div class="mb-4">
-     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" placeholder="Password" type="password"/>
-    </div>
-    <div class="mb-4">
-     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="confirm-password" placeholder="Confirm password" type="password"/>
-    </div>
-    <div class="mb-4 flex items-center">
-     <input class="mr-2 leading-tight" id="terms" type="checkbox"/>
-     <label class="text-sm text-gray-700" for="terms">
-      Eu concordo com o
-      <a class="text-yellow-500" href="#">
-       termos e Condições
-      </a>
-     </label>
-    </div>
-    <div class="mb-4">
-     <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" onclick="redirectToWelcome()" type="button">
-      Inscrever-se
-     </button>
-    </div>
-    <div class="text-center text-gray-500 text-sm">
-     Já tem uma conta?
-     <a class="text-gray-700 font-bold" href="/façalogin.html">
-      Faça login aqui
-     </a>
-    </div>
-   </form>
-   <div class="flex justify-center space-x-4">
-    <button class="bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center">
-     <i class="fab fa-facebook-f mr-2">
-     </i>
-     Facebook
-    </button>
-    <button class="bg-white border border-gray-300 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center">
-     <i class="fab fa-google mr-2">
-     </i>
-     Google
-    </button>
-   </div>
-  </div>
- </body>
+</body>
 </html>
+

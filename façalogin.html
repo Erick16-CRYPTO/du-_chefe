@@ -1,55 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="/style7.css">
 </head>
 <body>
     <div class="container">
-     <div class="logo">
-      <img alt="Logo of a chef holding a tray with the text 'Comida Du Chefe'" height="200" src="/logo trasparente.png" width="200"/>
-     </div>
-     <div class="input-group">
-      <input placeholder="Username" type="text"/>
-     </div>
-     <div class="input-group">
-      <input placeholder="Phone" type="text"/>
-     </div>
-     <div class="input-group">
-      <input placeholder="Password" type="password"/>
-     </div>
-     <div class="remember-me">
-      <label>
-       <input type="checkbox"/>
-       Remember Me
-      </label>
-      <a href="#">
-       Esqueceu sua senha
-      </a>
-     </div>
-     <button class="login-btn">
-      Conecte-se
-     </button>
-     <div class="signup-link">
-      Não tem uma conta?
-      <a href="/inscreva-se.html">
-       Inscreva-se aqui
-      </a>
-     </div>
-     <div class="social-login">
-      <a class="facebook" href="#">
-       <i class="fab fa-facebook-f">
-       </i>
-       Facebook
-      </a>
-      <a class="google" href="#">
-       <i class="fab fa-google">
-       </i>
-       Google
-      </a>
-     </div>
+        <div class="logo">
+            <img alt="Logo of a chef holding a tray with the text 'Comida Du Chefe'" height="200" src="/logo trasparente.png" width="200"/>
+        </div>
+
+        <!-- Form container -->
+        <form id="login-form" action="/inicio.html" method="POST" onsubmit="return validateForm(event)">
+            <div class="input-group">
+                <input id="username" name="username" placeholder="Username" type="text" required/>
+            </div>
+            <div class="input-group">
+                <input id="phone" name="phone" placeholder="Phone" type="text" required/>
+            </div>
+            <div class="input-group">
+                <input id="password" name="password" placeholder="Password" type="password" required/>
+            </div>
+            
+            <div class="remember-me">
+                <label>
+                    <input type="checkbox"/>
+                    Lembre de mim
+                </label>
+                <a href="/esqueciAsenha.html">Esqueceu sua senha</a>
+            </div>
+            
+            <button type="submit" class="login-btn">Conecte-se</button>
+        </form>
+        
+        <div class="signup-link">
+            Não tem uma conta?
+            <a href="/inscreva-se.html">Inscreva-se aqui</a>
+        </div>
+        
+        <div class="social-login">
+            <a class="facebook" href="#">
+                <i class="fab fa-facebook-f"></i>
+                Facebook
+            </a>
+            <a class="google" href="#">
+                <i class="fab fa-google"></i>
+                Google
+            </a>
+        </div>
     </div>
-   </body>
+
+    <script>
+        // Função de validação para garantir que todos os campos obrigatórios sejam preenchidos
+        function validateForm(event) {
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+
+            // Caso algum campo não esteja preenchido
+            if (!username || !phone || !password) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                event.preventDefault(); // Impede o envio do formulário
+                return false;
+            }
+
+            // Se todos os campos estiverem preenchidos, permite o envio do formulário
+            return true;
+        }
+    </script>
+</body>
 </html>
