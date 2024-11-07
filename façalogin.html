@@ -5,8 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="/style7.css">
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos para os checkboxes */
+        .checkbox-group {
+            text-align: left; /* Alinha todos os checkboxes à esquerda */
+            margin-top: 10px;
+        }
+
+        .checkbox-group label {
+            display: inline-block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+
+        /* Estilos para os botões e links */
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .remember-me, .social-login {
+            text-align: left; /* Alinha o "Lembre de mim" à esquerda */
+        }
+
+        .signup-link, .social-login {
+            text-align: center;
+        }
+
+        .social-login a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
+
     <div class="container">
         <div class="logo">
             <img alt="Logo of a chef holding a tray with the text 'Comida Du Chefe'" height="200" src="/logo trasparente.png" width="200"/>
@@ -18,20 +85,27 @@
                 <input id="username" name="username" placeholder="Username" type="text" required/>
             </div>
             <div class="input-group">
-                <input id="phone" name="phone" placeholder="Phone" type="text" required/>
+                <input id="phone" name="phone" placeholder="Telefone" type="text" required oninput="validatePhoneNumber(this)" />
             </div>
             <div class="input-group">
-                <input id="password" name="password" placeholder="Password" type="password" required/>
+                <input id="password" name="password" placeholder="Senha" type="password" required/>
             </div>
-            
-            <div class="remember-me">
-                <label>
-                    <input type="checkbox"/>
+
+            <!-- Alinhamento do checkbox "Mostrar Senha" com o "Lembre de mim" -->
+            <div class="checkbox-group">
+                <label for="show-password">
+                    <input type="checkbox" id="show-password" />
+                    Mostrar Senha
+                </label>
+                <br />
+                <label for="remember-me">
+                    <input type="checkbox" id="remember-me" />
                     Lembre de mim
                 </label>
-                <a href="/esqueciAsenha.html">Esqueceu sua senha</a>
             </div>
-            
+
+            <a href="/esqueciAsenha.html">Esqueceu sua senha?</a>
+
             <button type="submit" class="login-btn">Conecte-se</button>
         </form>
         
@@ -69,6 +143,35 @@
             // Se todos os campos estiverem preenchidos, permite o envio do formulário
             return true;
         }
+
+        // Função para validar o telefone (somente números)
+        function validatePhoneNumber(input) {
+            input.value = input.value.replace(/[^0-9]/g, ''); // Remove qualquer caractere não numérico
+        }
+
+        // Alterna entre mostrar e ocultar a senha quando o checkbox é marcado
+        document.getElementById('show-password').addEventListener('change', function() {
+            const passwordField = document.getElementById('password');
+            if (this.checked) {
+                passwordField.type = 'text'; // Exibir senha
+            } else {
+                passwordField.type = 'password'; // Ocultar senha
+            }
+        });
     </script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
