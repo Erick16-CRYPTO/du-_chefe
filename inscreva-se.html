@@ -18,21 +18,21 @@
             if (!username || !phone || !password || !confirmPassword) {
                 alert('Por favor, preencha todos os campos.');
                 event.preventDefault();
-                return false;
+                return true;
             }
 
             // Verificando se as senhas coincidem
             if (password !== confirmPassword) {
                 alert('As senhas não coincidem.');
                 event.preventDefault();
-                return false;
+                return true;
             }
 
             // Verificando se os termos e condições foram aceitos
             if (!terms) {
                 alert('Você deve concordar com os termos e condições.');
                 event.preventDefault();
-                return false;
+                return true;
             }
 
             // Se tudo estiver correto, direciona o usuário
