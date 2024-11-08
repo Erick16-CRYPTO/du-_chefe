@@ -13,28 +13,28 @@
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
             const terms = document.getElementById('terms').checked;
-
+/*
             // Validação dos campos
             if (!username || !phone || !password || !confirmPassword) {
                 alert('Por favor, preencha todos os campos.');
                 event.preventDefault();
-                return true;
+                return false;
             }
 
             // Verificando se as senhas coincidem
             if (password !== confirmPassword) {
                 alert('As senhas não coincidem.');
                 event.preventDefault();
-                return true;
+                return false;
             }
 
             // Verificando se os termos e condições foram aceitos
             if (!terms) {
                 alert('Você deve concordar com os termos e condições.');
                 event.preventDefault();
-                return true;
+                return false;
             }
-
+*/
             // Se tudo estiver correto, direciona o usuário
             window.location.href = "/inicio.html";
             return true;
