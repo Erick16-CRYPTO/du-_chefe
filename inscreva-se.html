@@ -6,14 +6,16 @@
     <title>Comida Du Chefe - Sign Up</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+
     <script>
+        /*
         function validateForm(event) {
             const username = document.getElementById('username').value;
             const phone = document.getElementById('phone').value;
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
             const terms = document.getElementById('terms').checked;
-/*
+
             // Validação dos campos
             if (!username || !phone || !password || !confirmPassword) {
                 alert('Por favor, preencha todos os campos.');
@@ -34,7 +36,7 @@
                 event.preventDefault();
                 return false;
             }
-*/
+
             // Se tudo estiver correto, direciona o usuário
             window.location.href = "/inicio.html";
             return true;
@@ -63,6 +65,7 @@
                 confirmPasswordField.type = 'password';
             }
         }
+        */
     </script>
 </head>
 <body class="bg-white flex items-center justify-center h-screen">
@@ -113,9 +116,11 @@
             </div>
 
             <div class="mb-4">
+                <a src="/inicio.html">
                 <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
                     Inscrever-se
                 </button>
+                </a>
             </div>
         </form>
 
