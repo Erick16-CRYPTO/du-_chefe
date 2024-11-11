@@ -80,7 +80,7 @@
         </div>
 
         <!-- Form container -->
-        <form id="login-form" action="/inicio.html" method="POST" onsubmit="return validateForm(event)">
+        <form id="login-form" onsubmit="return validateForm(event)">
             <div class="input-group">
                 <input id="username" name="username" placeholder="Username" type="text" required/>
             </div>
@@ -106,7 +106,8 @@
 
             <a href="/esqueciAsenha.html">Esqueceu sua senha?</a>
 
-            <a href="/inicio.html"><button type="submit" class="login-btn">Conecte-se</button></a>
+            <!-- Botão de login, sem link, será responsável por submeter o formulário -->
+            <button type="submit" class="login-btn">Conecte-se</button>
         </form>
         
         <div class="signup-link">
@@ -141,7 +142,9 @@
             }
 
             // Se todos os campos estiverem preenchidos, permite o envio do formulário
-            return true;
+            // Redireciona para a página inicial
+            window.location.replace("/inicio.html");
+            return false;  // Impede que o formulário seja enviado de forma tradicional
         }
 
         // Função para validar o telefone (somente números)

@@ -8,8 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 
     <script>
-        /*
         function validateForm(event) {
+            event.preventDefault();  // Impede o envio do formulário
+
             const username = document.getElementById('username').value;
             const phone = document.getElementById('phone').value;
             const password = document.getElementById('password').value;
@@ -19,26 +20,24 @@
             // Validação dos campos
             if (!username || !phone || !password || !confirmPassword) {
                 alert('Por favor, preencha todos os campos.');
-                event.preventDefault();
                 return false;
             }
 
             // Verificando se as senhas coincidem
             if (password !== confirmPassword) {
                 alert('As senhas não coincidem.');
-                event.preventDefault();
                 return false;
             }
 
             // Verificando se os termos e condições foram aceitos
             if (!terms) {
                 alert('Você deve concordar com os termos e condições.');
-                event.preventDefault();
                 return false;
             }
 
-            // Se tudo estiver correto, direciona o usuário
-            window.location.href = "/inicio.html";
+            // Se tudo estiver correto, redireciona o usuário
+            console.log('Formulário validado. Redirecionando...');
+            window.location.replace("/inicio.html");  // Usando replace para garantir que o histórico seja substituído
             return true;
         }
 
@@ -65,13 +64,12 @@
                 confirmPasswordField.type = 'password';
             }
         }
-        */
     </script>
 </head>
 <body class="bg-white flex items-center justify-center h-screen">
     <div class="w-full max-w-xs">
         <div class="flex justify-center mb-6">
-            <img alt="Logo of a chef holding a dish with the text 'Comida Du Chefe'" class="w-32 h-32" height="100" src="https://storage.googleapis.com/a1aa/image/cLfeep5m67CzLIZoJ4IMVT0Ddx0GtGUFJ3XCAbCigAfXxlbOB.jpg" width="100"/>
+            <img alt="Logo of a chef holding a dish with the text 'Comida Du Chefe'" class="w-32 h-32" height="100" src="/logo trasparente.png" width="100"/>
         </div>
         
         <!-- Formulário de inscrição -->
@@ -116,11 +114,9 @@
             </div>
 
             <div class="mb-4">
-                <a href="/inicio.html">
                 <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
                     Inscrever-se
                 </button>
-                </a>
             </div>
         </form>
 
@@ -141,4 +137,6 @@
     </div>
 </body>
 </html>
+
+
 
