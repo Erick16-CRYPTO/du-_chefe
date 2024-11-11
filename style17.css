@@ -1,0 +1,96 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(Captura\ de\ tela\ 2024-11-06\ 103907.png) no-repeat center center;
+    background-size: cover;
+}
+.search-bar {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background-color: rgba(255, 192, 203, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.search-bar i {
+    color: #000;
+}
+.map-pin {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.map-pin i {
+    color: #ff0000;
+    font-size: 32px;
+}
+.location-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.location-info .title {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+.location-info .address {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px;
+}
+.location-info .address i {
+    color: #ff0000;
+    margin-right: 10px;
+}
+.location-info .set-location-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#ave{
+    height: 70px;
+}
+#hero{
+    margin-top: 15px;
+    height: 50px;
+}
