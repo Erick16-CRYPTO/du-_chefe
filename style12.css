@@ -18,8 +18,8 @@ body {
 .modal .icon {
     background-color: #8b4a4a;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,5 +47,5 @@ body {
     font-size: 16px;
 }
 #AVE{
-    height: 100px;
+    height: 200px;
 }

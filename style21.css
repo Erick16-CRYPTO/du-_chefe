@@ -1,0 +1,67 @@
+body {
+    background-color: #b23a2e;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    width: 375px;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.header i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+.promo-card {
+    background-color: #f7e733;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.promo-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.promo-card .text {
+    flex: 1;
+}
+.promo-card .text h2 {
+    color: #b23a2e;
+    font-size: 24px;
+    margin: 0;
+}
+.promo-card .text p {
+    color: black;
+    font-size: 16px;
+    margin: 5px 0 0 0;
+}
+.promo-card .text small {
+    color: black;
+    font-size: 12px;
+}
+.discount-info {
+    background: linear-gradient(to right, #d3d3d3, #b23a2e);
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+}
+.discount-info a {
+    color: #7ed321;
+    text-decoration: none;
+}
