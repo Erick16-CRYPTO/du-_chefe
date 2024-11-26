@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,162 +9,121 @@
 <body>
     <div class="container">
         <div class="header">
-         <i class="fas fa-arrow-left">
-         </i>
-         <h1>
-          Profile settings
-         </h1>
+         <i class="fas fa-arrow-left"></i>
+         <h1>Profile settings</h1>
         </div>
         <div class="content">
-         <h2>
-          Base information
-         </h2>
+         <h2>Base information</h2>
          <div class="avatar">
           <img alt="Avatar of a person standing near a body of water" height="80" src="https://storage.googleapis.com/a1aa/image/H5litqTttQYOJ94L8d0dMMOjRvsZHlnDsOZj2YeTBf0rx4wTA.jpg" width="80"/>
          </div>
          <div class="form-group">
-          <label for="first-name">
-           First name
-          </label>
+          <label for="first-name">First name</label>
           <input id="first-name" type="text" value="Stefan"/>
          </div>
          <div class="form-group">
-          <label for="last-name">
-           Last name
-          </label>
+          <label for="last-name">Last name</label>
           <input id="last-name" type="text" value="Andersson"/>
          </div>
          <div class="form-group">
-          <label for="birth-date">
-           Birth date
-          </label>
-          <select id="day">
-           <option selected="" value="26">
-            1
-           </option>
-           <option selected="" value="26">
-            2
-           </option>
-           <option selected="" value="26">
-            3
-           </option>
-           <option selected="" value="26">
-            4
-           </option>
-           <option selected="" value="26">
-            5
-           </option>
-           <option selected="" value="26">
-            6
-           </option>
-           <option selected="" value="26">
-            7
-           </option>
-           <option selected="" value="26">
-            8
-           </option>
-           <option selected="" value="26">
-            9
-           </option>
-           <option selected="" value="26">
-            10
-           
+          <label for="birth-date">Data de nascimento</label>
+          <select id="dia">
+           <!-- Opções de dias serão geradas dinamicamente -->
           </select>
-          <select id="month">
-           
-            <option selected="" value="August">
-                janeiro
-               </option>
-               <option selected="" value="August">
-                fevereiro
-               </option>
-               <option selected="" value="August">
-                março
-               </option>
-               <option selected="" value="August">
-                Abril
-               </option>
-               <option selected="" value="August">
-                maio
-               </option>
-               <option selected="" value="August">
-                junho
-               </option>
-               <option selected="" value="August">
-                julho
-               </option>
+          <select id="month" onchange="updateDays()">
+           <option value="janeiro">Janeiro</option>
+           <option value="fevereiro">Fevereiro</option>
+           <option value="março">Março</option>
+           <option value="abril">Abril</option>
+           <option value="maio">Maio</option>
+           <option value="junho">Junho</option>
+           <option value="julho">Julho</option>
+           <option value="agosto">Agosto</option>
+           <option value="setembro">Setembro</option>
+           <option value="outubro">Outubro</option>
+           <option value="novembro">Novembro</option>
+           <option value="dezembro">Dezembro</option>
           </select>
-          <select id="year">
-           <option selected="" value="1994">
-            2000
-           </option>
-           <option selected="" value="1994">
-            2001
-           </option>
-           <option selected="" value="1994">
-            2002
-           </option>
-           <option selected="" value="1994">
-            2003
-           </option>
-           <option selected="" value="1994">
-            2004
-           </option>
-           <option selected="" value="1994">
-            2005
-           </option>
-           <option selected="" value="1994">
-            2006
-           </option>
-           <option selected="" value="1994">
-            2007
-           </option>
-           <option selected="" value="1994">
-            2008
-           </option>
-           <option selected="" value="1994">
-            2009
-           </option>
-           <option selected="" value="1994">
-            2010
-           </option>
+          <select id="anos">
+           <!-- JavaScript irá gerar as opções de ano -->
           </select>
          </div>
          <div class="form-group">
-          <label>
-           Gender
-          </label>
+          <label>Gênero</label>
           <div class="gender">
            <input id="not-set" name="gender" type="radio" value="not-set"/>
-           <label for="not-set">
-            Not set
-           </label>
+           <label for="not-set">Não definido</label>
            <input checked="" id="male" name="gender" type="radio" value="male"/>
-           <label for="male">
-            Male
-           </label>
+           <label for="male">Masculino</label>
            <input id="female" name="gender" type="radio" value="female"/>
-           <label for="female">
-            Female
-           </label>
-           <input id="not-applicable" name="gender" type="radio" value="not-applicable"/>
-           <label for="not-applicable">
-            Not applicable
-           </label>
+           <label for="female">Feminino</label>
           </div>
          </div>
          <div class="buttons">
-          <button class="cancel">
-           Cancel
-          </button>
-          <button class="save">
-           Save
-          </button>
+          <button class="cancel">Cancelar</button>
+          <button class="save">Salvar</button>
          </div>
         </div>
-       </div>
+    </div>
+
+    <script>
+        // Função para verificar se o ano é bissexto
+        function isLeapYear(year) {
+            return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        }
+
+        // Função para atualizar os dias com base no mês e ano selecionados
+        function updateDays() {
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('anos').value;
+            const daysSelect = document.getElementById('dia');
+
+            // Número de dias de cada mês
+            const daysInMonth = {
+                janeiro: 31,
+                fevereiro: isLeapYear(year) ? 29 : 28,
+                março: 31,
+                abril: 30,
+                maio: 31,
+                junho: 30,
+                julho: 31,
+                agosto: 31,
+                setembro: 30,
+                outubro: 31,
+                novembro: 30,
+                dezembro: 31
+            };
+
+            const days = daysInMonth[month];
+            daysSelect.innerHTML = ''; // Limpa as opções de dias
+
+            // Adiciona os dias correspondentes ao mês
+            for (let i = 1; i <= days; i++) {
+                const option = document.createElement('option');
+                option.value = i < 10 ? '0' + i : i; // Formata os dias para 01, 02, etc.
+                option.textContent = i < 10 ? '0' + i : i;
+                daysSelect.appendChild(option);
+            }
+        }
+
+        // Gerando anos de 1980 até o ano atual
+        const selectAnos = document.getElementById('anos');
+        const anoAtual = new Date().getFullYear();
+
+        for (let ano = 1980; ano <= anoAtual; ano++) {
+            const option = document.createElement('option');
+            option.value = ano;
+            option.textContent = ano;
+            selectAnos.appendChild(option);
+        }
+
+        // Inicializa o formulário
+        updateDays(); // Chama a função para preencher os dias inicialmente
+    </script>
 </body>
 </html>
+
+
 
 
 
