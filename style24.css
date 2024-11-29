@@ -5,7 +5,7 @@ body {
     background-color: #f8f8f8;
 }
 header {
-    background-color: #ee2b08;
+    background-color: #d93e23;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -83,4 +83,17 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+#pong{
+    border-radius: 50%;
+    background-color: #d93e23;
+    border: #d93e23;
+    display: flex;
+    left: 200px;
+    
+}
+
+#ping{
+    height: 50px;
 }
